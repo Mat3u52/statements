@@ -21,7 +21,7 @@ def report_turnover_by_year_month(period_begin, period_end):
 class Account(models.Model):
     name = models.CharField(max_length=100)
     currency = models.CharField(max_length=3)
-    # TODO: TASK → add field balance that will update automatically  = nok
+    # TODO: TASK → add field balance that will update automatically
     # balance = models.DecimalField(max_digits=10, decimal_places=2, default=0)
 
     def __str__(self):
@@ -31,7 +31,7 @@ class Account(models.Model):
 class Statement(models.Model):
     account = models.ForeignKey(Account, on_delete=models.PROTECT)
     date = models.DateField()
-    # TODO: TASK → make sure that account and date is unique on database level - ok
+    # TODO: TASK → make sure that account and date is unique on database level
 
     def __str__(self):
         return f'{self.account} → {self.date}'
@@ -45,8 +45,8 @@ class StatementItem(models.Model):
     amount = models.DecimalField(max_digits=12, decimal_places=2)
     currency = models.CharField(max_length=3)
     title = models.CharField(max_length=100)
-    # TODO:  TASK → add field comments (type text) - ok
-    # comments = models.TextField(blank=True, null=True)
+    # TODO:  TASK → add field comments (type text) - done
+    comments = models.TextField(blank=True, null=True)
 
     def __str__(self):
         return f'[{self.statement}] {self.amount} {self.currency} → {self.title}'
