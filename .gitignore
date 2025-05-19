@@ -10,7 +10,7 @@ venv/
 ENV/
 env.bak/
 venv.bak/
-/statements_app/migrations
+/statements/migrations/
 example_data.csv
 example_init.py
 manage-bak.py

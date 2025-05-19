@@ -18,11 +18,12 @@ def report_turnover_by_year_month(period_begin, period_end):
         }
     }
 
+
 class Account(models.Model):
     name = models.CharField(max_length=100)
     currency = models.CharField(max_length=3)
-    # TODO: TASK → add field balance that will update automatically
-    # balance = models.DecimalField(max_digits=10, decimal_places=2, default=0)
+    # TODO: TASK → add field balance that will update automatically - done
+    balance = models.DecimalField(max_digits=10, decimal_places=2, default=0)
 
     def __str__(self):
         return f'{self.name}[{self.currency}]'
